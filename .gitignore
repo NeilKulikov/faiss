@@ -17,4 +17,4 @@
 /tests/test
 /tests/gtest/
 /cython/build/
-/cython/cy_faiss.cpp
+/cython/*.cpp
