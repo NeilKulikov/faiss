@@ -1,5 +1,6 @@
-from libc.stdint inmport int64_t
-from libcpp.memory inmport shared_ptr, nullptr
+from libc.stdint cimport int64_t
+from libcpp cimport nullptr
+from libcpp.memory cimport shared_ptr
 
 cdef extern from "faiss/Index.h" namespace "faiss":
     cdef cppclass Index:
@@ -12,15 +13,22 @@ cdef extern from "faiss/Index.h" namespace "faiss":
 cdef class IndexWrapper:
     cdef shared_ptr[Index] impl
 
-    def __cinit__(self, Index* ptr):
-        self.impl = shared_ptr[Index](ptr) 
+    def __cinit__(self, IndexWrapper other = None):
+        if other is not None:
+            self.impl = shared_ptr[Index](other.impl) 
 
-    @property
     cdef Index* get_raw(self):
-        if impl.get() is nullptr:
+        cdef Index* raw_ptr = self.impl.get() 
+        if raw_ptr is nullptr:
             raise MemoryError
-        return impl.get()
+        return raw_ptr
 
     @property
-    cdef int64_t d(self):
-        return self.get_raw.d
+    def d(self):
+        return self.get_raw().d
+
+    @staticmethod
+    cdef IndexWrapper from_raw_ptr(Index* raw_ptr):
+        cdef IndexWrapper result = IndexWrapper()
+        result.impl = shared_ptr[Index](raw_ptr)
+        return result
