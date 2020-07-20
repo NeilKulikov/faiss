@@ -24,7 +24,7 @@ ifneq ($(strip $(NVCC)),)
 	HEADERS     += $(GPU_HEADERS)
 endif
 
-CPPFLAGS += -I.
+CPPFLAGS += -I. -I..
 NVCCFLAGS += -I.
 
 ############################
