@@ -823,14 +823,14 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "cy_faiss.pyx",
+  "IndexWrapper.pyx",
   "stringsource",
 };
 
 /*--- Type declarations ---*/
 struct __pyx_obj_8cy_faiss_IndexWrapper;
 
-/* "cy_faiss.pyx":7
+/* "IndexWrapper.pyx":7
  * from Index cimport Index
  * 
  * cdef class IndexWrapper:             # <<<<<<<<<<<<<<
@@ -1263,7 +1263,7 @@ static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "cy_faiss.pyx":12
+/* "IndexWrapper.pyx":12
  * 
  *     #Constructor that allow zero cost copy
  *     def __cinit__(self, IndexWrapper other = None):             # <<<<<<<<<<<<<<
@@ -1342,7 +1342,7 @@ static int __pyx_pf_8cy_faiss_12IndexWrapper___cinit__(struct __pyx_obj_8cy_fais
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "cy_faiss.pyx":13
+  /* "IndexWrapper.pyx":13
  *     #Constructor that allow zero cost copy
  *     def __cinit__(self, IndexWrapper other = None):
  *         if other is not None:             # <<<<<<<<<<<<<<
@@ -1353,7 +1353,7 @@ static int __pyx_pf_8cy_faiss_12IndexWrapper___cinit__(struct __pyx_obj_8cy_fais
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "cy_faiss.pyx":14
+    /* "IndexWrapper.pyx":14
  *     def __cinit__(self, IndexWrapper other = None):
  *         if other is not None:
  *             self.__impl = shared_ptr[Index](other.__impl)             # <<<<<<<<<<<<<<
@@ -1362,7 +1362,7 @@ static int __pyx_pf_8cy_faiss_12IndexWrapper___cinit__(struct __pyx_obj_8cy_fais
  */
     __pyx_v_self->__pyx___impl = std::shared_ptr<faiss::Index> (__pyx_v_other->__pyx___impl);
 
-    /* "cy_faiss.pyx":13
+    /* "IndexWrapper.pyx":13
  *     #Constructor that allow zero cost copy
  *     def __cinit__(self, IndexWrapper other = None):
  *         if other is not None:             # <<<<<<<<<<<<<<
@@ -1371,7 +1371,7 @@ static int __pyx_pf_8cy_faiss_12IndexWrapper___cinit__(struct __pyx_obj_8cy_fais
  */
   }
 
-  /* "cy_faiss.pyx":12
+  /* "IndexWrapper.pyx":12
  * 
  *     #Constructor that allow zero cost copy
  *     def __cinit__(self, IndexWrapper other = None):             # <<<<<<<<<<<<<<
@@ -1385,7 +1385,7 @@ static int __pyx_pf_8cy_faiss_12IndexWrapper___cinit__(struct __pyx_obj_8cy_fais
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":17
+/* "IndexWrapper.pyx":17
  * 
  *     #Usage of this method is prohibited for outer usage
  *     cdef Index* _get_raw(self):             # <<<<<<<<<<<<<<
@@ -1403,7 +1403,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_raw", 0);
 
-  /* "cy_faiss.pyx":18
+  /* "IndexWrapper.pyx":18
  *     #Usage of this method is prohibited for outer usage
  *     cdef Index* _get_raw(self):
  *         cdef Index* raw_ptr = self.__impl.get()             # <<<<<<<<<<<<<<
@@ -1412,7 +1412,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
  */
   __pyx_v_raw_ptr = __pyx_v_self->__pyx___impl.get();
 
-  /* "cy_faiss.pyx":19
+  /* "IndexWrapper.pyx":19
  *     cdef Index* _get_raw(self):
  *         cdef Index* raw_ptr = self.__impl.get()
  *         if raw_ptr is nullptr:             # <<<<<<<<<<<<<<
@@ -1422,7 +1422,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
   __pyx_t_1 = ((__pyx_v_raw_ptr == nullptr) != 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "cy_faiss.pyx":20
+    /* "IndexWrapper.pyx":20
  *         cdef Index* raw_ptr = self.__impl.get()
  *         if raw_ptr is nullptr:
  *             raise MemoryError             # <<<<<<<<<<<<<<
@@ -1431,7 +1431,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
  */
     PyErr_NoMemory(); __PYX_ERR(0, 20, __pyx_L1_error)
 
-    /* "cy_faiss.pyx":19
+    /* "IndexWrapper.pyx":19
  *     cdef Index* _get_raw(self):
  *         cdef Index* raw_ptr = self.__impl.get()
  *         if raw_ptr is nullptr:             # <<<<<<<<<<<<<<
@@ -1440,7 +1440,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
  */
   }
 
-  /* "cy_faiss.pyx":21
+  /* "IndexWrapper.pyx":21
  *         if raw_ptr is nullptr:
  *             raise MemoryError
  *         return raw_ptr             # <<<<<<<<<<<<<<
@@ -1450,7 +1450,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
   __pyx_r = __pyx_v_raw_ptr;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":17
+  /* "IndexWrapper.pyx":17
  * 
  *     #Usage of this method is prohibited for outer usage
  *     cdef Index* _get_raw(self):             # <<<<<<<<<<<<<<
@@ -1467,7 +1467,7 @@ static faiss::Index *__pyx_f_8cy_faiss_12IndexWrapper__get_raw(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":25
+/* "IndexWrapper.pyx":25
  *     #Property that stores dimensionality of vectors
  *     @property.getter
  *     def d(self):             # <<<<<<<<<<<<<<
@@ -1497,7 +1497,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_2d(struct __pyx_obj_8cy_faiss
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("d", 0);
 
-  /* "cy_faiss.pyx":26
+  /* "IndexWrapper.pyx":26
  *     @property.getter
  *     def d(self):
  *         return self._get_raw().d             # <<<<<<<<<<<<<<
@@ -1511,7 +1511,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_2d(struct __pyx_obj_8cy_faiss
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":25
+  /* "IndexWrapper.pyx":25
  *     #Property that stores dimensionality of vectors
  *     @property.getter
  *     def d(self):             # <<<<<<<<<<<<<<
@@ -1530,7 +1530,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_2d(struct __pyx_obj_8cy_faiss
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":30
+/* "IndexWrapper.pyx":30
  *     #Property that stores number of vectors in train dataset
  *     @property.getter
  *     def ntotal(self):             # <<<<<<<<<<<<<<
@@ -1560,7 +1560,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_4ntotal(struct __pyx_obj_8cy_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("ntotal", 0);
 
-  /* "cy_faiss.pyx":31
+  /* "IndexWrapper.pyx":31
  *     @property.getter
  *     def ntotal(self):
  *         return self._get_raw().ntotal             # <<<<<<<<<<<<<<
@@ -1574,7 +1574,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_4ntotal(struct __pyx_obj_8cy_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":30
+  /* "IndexWrapper.pyx":30
  *     #Property that stores number of vectors in train dataset
  *     @property.getter
  *     def ntotal(self):             # <<<<<<<<<<<<<<
@@ -1593,7 +1593,7 @@ static PyObject *__pyx_pf_8cy_faiss_12IndexWrapper_4ntotal(struct __pyx_obj_8cy_
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":34
+/* "IndexWrapper.pyx":34
  * 
  *     #Adds vectors to storage
  *     cdef add(self, int64_t n, const float* x):             # <<<<<<<<<<<<<<
@@ -1610,7 +1610,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add(struct __pyx_obj_8cy_faiss
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add", 0);
 
-  /* "cy_faiss.pyx":35
+  /* "IndexWrapper.pyx":35
  *     #Adds vectors to storage
  *     cdef add(self, int64_t n, const float* x):
  *         return self._get_raw().add(n, x)             # <<<<<<<<<<<<<<
@@ -1624,7 +1624,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add(struct __pyx_obj_8cy_faiss
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":34
+  /* "IndexWrapper.pyx":34
  * 
  *     #Adds vectors to storage
  *     cdef add(self, int64_t n, const float* x):             # <<<<<<<<<<<<<<
@@ -1643,7 +1643,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add(struct __pyx_obj_8cy_faiss
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":38
+/* "IndexWrapper.pyx":38
  * 
  *     #Adds vectors to storage and performs training
  *     cdef train(self, int64_t n, const float* x):             # <<<<<<<<<<<<<<
@@ -1660,12 +1660,12 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_train(struct __pyx_obj_8cy_fai
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("train", 0);
 
-  /* "cy_faiss.pyx":39
+  /* "IndexWrapper.pyx":39
  *     #Adds vectors to storage and performs training
  *     cdef train(self, int64_t n, const float* x):
  *         return self._get_raw().train(n, x)             # <<<<<<<<<<<<<<
  * 
- *     #Adds vectors with predefined indices
+ *     #def train(self, np.ndarray[float, ndim = 1, mode = "c"])
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_void_to_None(((struct __pyx_vtabstruct_8cy_faiss_IndexWrapper *)__pyx_v_self->__pyx_vtab)->_get_raw(__pyx_v_self)->train(__pyx_v_n, __pyx_v_x)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
@@ -1674,7 +1674,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_train(struct __pyx_obj_8cy_fai
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":38
+  /* "IndexWrapper.pyx":38
  * 
  *     #Adds vectors to storage and performs training
  *     cdef train(self, int64_t n, const float* x):             # <<<<<<<<<<<<<<
@@ -1693,7 +1693,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_train(struct __pyx_obj_8cy_fai
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":42
+/* "IndexWrapper.pyx":44
  * 
  *     #Adds vectors with predefined indices
  *     cdef add_with_ids(self, int64_t n, const float* x, const int64_t* xids):             # <<<<<<<<<<<<<<
@@ -1710,7 +1710,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add_with_ids(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_with_ids", 0);
 
-  /* "cy_faiss.pyx":43
+  /* "IndexWrapper.pyx":45
  *     #Adds vectors with predefined indices
  *     cdef add_with_ids(self, int64_t n, const float* x, const int64_t* xids):
  *         return self._get_raw().add_with_ids(n, x, xids)             # <<<<<<<<<<<<<<
@@ -1718,13 +1718,13 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add_with_ids(struct __pyx_obj_
  *     #Deletes all vectors from Index
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(((struct __pyx_vtabstruct_8cy_faiss_IndexWrapper *)__pyx_v_self->__pyx_vtab)->_get_raw(__pyx_v_self)->add_with_ids(__pyx_v_n, __pyx_v_x, __pyx_v_xids)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(((struct __pyx_vtabstruct_8cy_faiss_IndexWrapper *)__pyx_v_self->__pyx_vtab)->_get_raw(__pyx_v_self)->add_with_ids(__pyx_v_n, __pyx_v_x, __pyx_v_xids)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":42
+  /* "IndexWrapper.pyx":44
  * 
  *     #Adds vectors with predefined indices
  *     cdef add_with_ids(self, int64_t n, const float* x, const int64_t* xids):             # <<<<<<<<<<<<<<
@@ -1743,7 +1743,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_add_with_ids(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":46
+/* "IndexWrapper.pyx":48
  * 
  *     #Deletes all vectors from Index
  *     cdef reset(self):             # <<<<<<<<<<<<<<
@@ -1760,7 +1760,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_reset(struct __pyx_obj_8cy_fai
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("reset", 0);
 
-  /* "cy_faiss.pyx":47
+  /* "IndexWrapper.pyx":49
  *     #Deletes all vectors from Index
  *     cdef reset(self):
  *         return self._get_raw().reset()             # <<<<<<<<<<<<<<
@@ -1768,13 +1768,13 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_reset(struct __pyx_obj_8cy_fai
  *     #It allow us to create instance with direct forwarding of ptr
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(((struct __pyx_vtabstruct_8cy_faiss_IndexWrapper *)__pyx_v_self->__pyx_vtab)->_get_raw(__pyx_v_self)->reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(((struct __pyx_vtabstruct_8cy_faiss_IndexWrapper *)__pyx_v_self->__pyx_vtab)->_get_raw(__pyx_v_self)->reset()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":46
+  /* "IndexWrapper.pyx":48
  * 
  *     #Deletes all vectors from Index
  *     cdef reset(self):             # <<<<<<<<<<<<<<
@@ -1793,7 +1793,7 @@ static PyObject *__pyx_f_8cy_faiss_12IndexWrapper_reset(struct __pyx_obj_8cy_fai
   return __pyx_r;
 }
 
-/* "cy_faiss.pyx":52
+/* "IndexWrapper.pyx":54
  *     #Also it is prohibited for outer usage
  *     @staticmethod
  *     cdef IndexWrapper _from_raw_ptr(Index* raw_ptr):             # <<<<<<<<<<<<<<
@@ -1811,19 +1811,19 @@ static struct __pyx_obj_8cy_faiss_IndexWrapper *__pyx_f_8cy_faiss_12IndexWrapper
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_from_raw_ptr", 0);
 
-  /* "cy_faiss.pyx":53
+  /* "IndexWrapper.pyx":55
  *     @staticmethod
  *     cdef IndexWrapper _from_raw_ptr(Index* raw_ptr):
  *         cdef IndexWrapper result = IndexWrapper()             # <<<<<<<<<<<<<<
  *         result.__impl = shared_ptr[Index](raw_ptr)
  *         return result
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_8cy_faiss_IndexWrapper)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(((PyObject *)__pyx_ptype_8cy_faiss_IndexWrapper)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_result = ((struct __pyx_obj_8cy_faiss_IndexWrapper *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cy_faiss.pyx":54
+  /* "IndexWrapper.pyx":56
  *     cdef IndexWrapper _from_raw_ptr(Index* raw_ptr):
  *         cdef IndexWrapper result = IndexWrapper()
  *         result.__impl = shared_ptr[Index](raw_ptr)             # <<<<<<<<<<<<<<
@@ -1831,7 +1831,7 @@ static struct __pyx_obj_8cy_faiss_IndexWrapper *__pyx_f_8cy_faiss_12IndexWrapper
  */
   __pyx_v_result->__pyx___impl = std::shared_ptr<faiss::Index> (__pyx_v_raw_ptr);
 
-  /* "cy_faiss.pyx":55
+  /* "IndexWrapper.pyx":57
  *         cdef IndexWrapper result = IndexWrapper()
  *         result.__impl = shared_ptr[Index](raw_ptr)
  *         return result             # <<<<<<<<<<<<<<
@@ -1841,7 +1841,7 @@ static struct __pyx_obj_8cy_faiss_IndexWrapper *__pyx_f_8cy_faiss_12IndexWrapper
   __pyx_r = __pyx_v_result;
   goto __pyx_L0;
 
-  /* "cy_faiss.pyx":52
+  /* "IndexWrapper.pyx":54
  *     #Also it is prohibited for outer usage
  *     @staticmethod
  *     cdef IndexWrapper _from_raw_ptr(Index* raw_ptr):             # <<<<<<<<<<<<<<
@@ -2488,7 +2488,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cy_faiss.pyx":24
+  /* "IndexWrapper.pyx":24
  * 
  *     #Property that stores dimensionality of vectors
  *     @property.getter             # <<<<<<<<<<<<<<
@@ -2498,7 +2498,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_builtin_property, __pyx_n_s_getter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "cy_faiss.pyx":25
+  /* "IndexWrapper.pyx":25
  *     #Property that stores dimensionality of vectors
  *     @property.getter
  *     def d(self):             # <<<<<<<<<<<<<<
@@ -2527,7 +2527,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_8cy_faiss_IndexWrapper);
 
-  /* "cy_faiss.pyx":29
+  /* "IndexWrapper.pyx":29
  * 
  *     #Property that stores number of vectors in train dataset
  *     @property.getter             # <<<<<<<<<<<<<<
@@ -2537,7 +2537,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_builtin_property, __pyx_n_s_getter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "cy_faiss.pyx":30
+  /* "IndexWrapper.pyx":30
  *     #Property that stores number of vectors in train dataset
  *     @property.getter
  *     def ntotal(self):             # <<<<<<<<<<<<<<
@@ -2566,7 +2566,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_8cy_faiss_IndexWrapper);
 
-  /* "cy_faiss.pyx":1
+  /* "IndexWrapper.pyx":1
  * from libc.stdint cimport int64_t             # <<<<<<<<<<<<<<
  * from libcpp cimport nullptr
  * from libcpp.memory cimport shared_ptr

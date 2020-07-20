@@ -13,7 +13,7 @@ series_params = {
                     'extra_objects' : ['../libfaiss.a']
                 }
 
-series = Extension('cy_faiss', ['cy_faiss.pyx'], **series_params)
+series = Extension('cy_faiss', ['IndexWrapper.pyx'], **series_params)
 
 setup_params =   {
                     'name' : 'cy_faiss',
